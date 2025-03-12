@@ -8,7 +8,7 @@ test('Check employee names', async ({ page }) => {
   const employeeNameElements = await page.$$('.employee-name'); // Replace '.employee-name' with the correct selector
 
   //Expected employee names
-  const expectedEmployeeNames = ["John Doe", "Jane Smith", "Alice Johnson"];
+  const expectedEmployeeNames = ["John Doe", "Jane joseph", "Alice Johnson"];
 
   //Verify the amount of employees
   await expect(employeeNameElements.length).toBe(expectedEmployeeNames.length);
