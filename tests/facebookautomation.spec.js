@@ -16,7 +16,8 @@ test('login', async ({ page }) => {
 
   // Example for increasing timeout for a specific action
 await page.getByLabel('Password').fill('Pravesh@123', { timeout: 50000 }); // 50 seconds
-await page.pause();
+
+await page.getByRole('button', { name: 'Log In' }).click();
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible
 });

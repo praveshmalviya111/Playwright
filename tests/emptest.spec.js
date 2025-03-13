@@ -33,7 +33,8 @@ test('Check employee names', async ({ page }) => {
 test('Check employee names in table', async ({ page }) => {
     await page.goto('/employeeTable'); // Replace '/employeeTable' with the actual URL
 
-    const expectedEmployeeNames = ["Bob Williams", "Charlie Brown", "David Lee"];
+    const expectedEmployeeNames =  ["John Doe", "Jane joseph", "Alice Johnson"];
+
 
     for (const name of expectedEmployeeNames) {
         const row = page.locator('tr', { hasText: name });
