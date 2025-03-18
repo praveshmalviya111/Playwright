@@ -1,8 +1,11 @@
-const { expect, test } = require('@playwright/test');
-const path = require('path');
+const { test, expect  } = require('@playwright/test');
+// const path = require('path');
+const {FormPage} = require('../demoqaformpage/demoqa');
+
 
 test('Fill Automation Practice Form', async ({ page }) => {
-    // Navigate to the form page with an increased timeout
+
+  // Navigate to the form page with an increased timeout
     await page.goto('https://demoqa.com/automation-practice-form', {
         timeout: 60000,
         waitUntil: 'domcontentloaded'  // Changed from 'networkidle' to 'networkidle0'
