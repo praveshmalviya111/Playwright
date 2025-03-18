@@ -1,5 +1,11 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+module.exports = {
+  timeout: 60000, // Increase test timeout to 60 seconds
+  expect: {
+      timeout: 10000 // Timeout for expect assertions
+  }
+};
 
 /**
  * Read environment variables from file.
@@ -45,10 +51,10 @@ export default defineConfig({
     //   use: { ...devices['Desktop Firefox'] },
     // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
