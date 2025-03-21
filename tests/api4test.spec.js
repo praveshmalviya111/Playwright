@@ -21,7 +21,7 @@ test('should get unknown resources', async ({ request }) => {
     expect(firstItem.pantone_value).toBeDefined();
   }
 
-  console.log('Unknown Resources API Response:', body);
+  console.log('Unknown Resources API Response:', body.data);
 });
 
 test('should get a single unknown resource', async ({ request }) => {
@@ -36,7 +36,7 @@ test('should get a single unknown resource', async ({ request }) => {
     expect(body.data.color).toBeDefined();
     expect(body.data.pantone_value).toBeDefined();
 
-    console.log(`Unknown Resource ${unknownId} API Response:`, body);
+    console.log(`Unknown Resource ${unknownId} API Response:`, body.data);
 });
 
 test('should handle unknown resource not found', async ({ request }) => {
@@ -45,5 +45,5 @@ test('should handle unknown resource not found', async ({ request }) => {
     expect(response.status()).toBe(404);
     const body = await response.json();
     expect(body).toEqual({});
-    console.log(`Unknown Resource ${unknownId} not found API Response:`, body);
+    console.log(`Unknown Resource ${unknownId} not found API Response:`, body.data);
 });
